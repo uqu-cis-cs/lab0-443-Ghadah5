@@ -8,7 +8,7 @@ package edu.uqu.cs;
 * Make sure to complete and submit your lab
 */
 
-
+import java.util.Scanner;
 public class App{
 
 /**  
@@ -44,15 +44,75 @@ public class App{
 */
  
     public static void main(String [] args) {
-        
-
         /* Write your code here */
-     
        //call method twisters()
+       twisters();
        //prompt user to enter a string 
+        Scanner input = new Scanner(System.in);
+       
        //call method phoneKeypad(string)
-
-
+        phoneKeypad(input.nextLine());
     }
-
+     public static void twisters(){
+        for(int n=1; n<=110 ; n++ ){
+            if(n%2==0){
+            System.out.print("Tweetle");
+            if (n%4==0)
+               System.out.print("Beetle");
+                 if (n%6==0)
+               System.out.print("Poodle");
+               } else
+                 System.out.print(" " +n+ " ");        
+       }
+    }
+     public static void phoneKeypad(String str){
+      str = str.toUpperCase();
+       String result="";
+       for( int i =0 ; i<= str.length()-1; i++ ){
+        switch(str.charAt(i)){
+         case 'A' : 
+         case 'B' :
+         case 'C' :
+         result += 2;
+         break;
+         case 'D' :
+         case 'E' :
+         case 'F' :
+         result +=3;
+         break;
+         case 'G' : 
+         case 'H' :
+         case 'I' :
+         result +=4;
+         break;
+         case 'J' :
+         case 'K' :
+         case 'L' :
+         result+=5;
+         break; 
+         case 'M' :
+         case 'N' :
+         case 'O' :
+         result +=6;
+         break;
+         case 'P' :
+         case 'Q' :
+         case 'R' :
+         case 'S' :
+         result+=7;
+         break;
+         case 'T' :
+         case 'U' :
+         case 'V' :
+         result+=8;
+         break;
+         case 'W' :
+         case 'X' :
+         case 'Y' :
+         case 'Z' :
+         result+=9;
+         break;
+        }
+      }System.out.println(result);
+   }
 }
